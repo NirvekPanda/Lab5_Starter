@@ -23,7 +23,7 @@ function init() {
     /* change volume icon based on selected volume */
     if (volumeVal == 0) {
       volumeImage.src = 'assets/icons/volume-level-0.svg';
-    } else if (volumeVal < 34) {
+    } else if (volumeVal < 33) {
       volumeImage.src = 'assets/icons/volume-level-1.svg';
     } else if (volumeVal < 67) {
       volumeImage.src = 'assets/icons/volume-level-2.svg';
