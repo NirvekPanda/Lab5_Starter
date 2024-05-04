@@ -9,6 +9,7 @@ function init() {
   const voiceSelect = document.getElementById('voice-select');
   // Populate the voice select dropdown on page load
   synth.onvoiceschanged = function () {
+    synth.cancel();
     let voices = synth.getVoices();
     voices.forEach((voice) => {
       let option = document.createElement('option');
@@ -24,6 +25,7 @@ function init() {
   // Handle button click
   button.addEventListener('click', function () {
 
+    synth.cancel();
     const textInput = document.getElementById('text-to-speak');
     const textVal = textInput.value;
     const textData = voiceSelect.selectedOptions[0].getAttribute('data-name');
@@ -38,7 +40,7 @@ function init() {
       // Change the image to open mouth while speaking
       image.src = 'assets/images/smiling-open.png';
 
-      // Speak the text
+      // Speak the text using the selected voice
       utterance.voice = selected_voice;
       synth.speak(utterance);
 
