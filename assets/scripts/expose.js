@@ -45,7 +45,6 @@ function init() {
 
     const hornType = document.getElementById('horn-select').value;
     if (hornType == 'party-horn') {
-      
       jsConfetti.addConfetti();
     }
   });
