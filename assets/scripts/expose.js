@@ -37,7 +37,6 @@ function init() {
   /* button */
   const jsConfetti = new JSConfetti();
   const button = document.querySelector('button');
-  const jsConfetti = new JSConfetti();
   button.addEventListener('click', function Button() {
     const audio = document.getElementsByClassName('hidden');
     /*console.log(audio);*/
