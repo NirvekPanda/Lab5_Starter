@@ -35,6 +35,7 @@ function init() {
   });
 
   /* button */
+  const jsConfetti = new JSConfetti();
   const button = document.querySelector('button');
   button.addEventListener('click', function Button() {
     const audio = document.getElementsByClassName('hidden');
@@ -44,7 +45,7 @@ function init() {
 
     const hornType = document.getElementById('horn-select').value;
     if (hornType == 'party-horn') {
-      const jsConfetti = new JSConfetti();
+      
       jsConfetti.addConfetti();
     }
   });
