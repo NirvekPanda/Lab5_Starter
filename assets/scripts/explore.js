@@ -4,16 +4,17 @@ window.addEventListener('DOMContentLoaded', init);
 
 function init() {
   // Initialize the speech synthesis API
-
   const synth = window.speechSynthesis;
-  const voiceSelect = document.getElementById('voice-select');
   // Populate the voice select dropdown on page load
+  const voiceSelect = document.getElementById('voice-select');
   synth.onvoiceschanged = function () {
+    // Clear existing voices
     synth.cancel();
     let voices = synth.getVoices();
+    // loop through each voice and create a selection for it 
     voices.forEach((voice) => {
       let option = document.createElement('option');
-      option.textContent = `${voice.name} (${voice.lang})`;
+      option.textContent = `${voice.name} - ${voice.lang}`;
       option.setAttribute('data-lang', voice.lang);
       option.setAttribute('data-name', voice.name);
       voiceSelect.appendChild(option);
