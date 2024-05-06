@@ -30,7 +30,7 @@ test('false for emails', () => {
 });
 
 test('true for password strength', () => {
-  expect(isStrongPassword('123A00000')).toBe(true);
+  expect(isStrongPassword('123Abcd')).toBe(true);
   expect(isStrongPassword('test0PASS')).toBe(true);
 });
 
