@@ -15,29 +15,27 @@ function init() {
 
   /* volume */
   const volume = document.getElementById('volume');
-  volume.addEventListener('change', function Volume() {
+  volume.addEventListener('input', function Volume() {
     let volumeVal = volume.value;
     let audio = document.querySelector('audio');
     let volumeImage = document.querySelector('#volume-controls img');
-
+    audio.volume = (volumeVal / 100);
     /* change volume icon based on selected volume */
     if (volumeVal == 0) {
       volumeImage.src = 'assets/icons/volume-level-0.svg';
-    } else if (volumeVal < 33) {
+    } else if (volumeVal > 0 && volumeVal < 33) {
       volumeImage.src = 'assets/icons/volume-level-1.svg';
-    } else if (volumeVal < 67) {
+    } else if (volumeVal >= 33 && volumeVal <= 66) {
       volumeImage.src = 'assets/icons/volume-level-2.svg';
     } else {
       volumeImage.src = 'assets/icons/volume-level-3.svg';
     }
     /*console.log(volumeVal)*/
-    audio.volume = (Number)(volumeVal / 100);
   });
 
   /* button */
   const jsConfetti = new JSConfetti();
   const button = document.querySelector('button');
-  const jsConfetti = new JSConfetti();
   button.addEventListener('click', function Button() {
     const audio = document.getElementsByClassName('hidden');
     /*console.log(audio);*/
