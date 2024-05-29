@@ -39,6 +39,8 @@ function init() {
   });
 
   /* button */
+  const jsConfetti = new JSConfetti();
+  const button = document.querySelector('button');
   button.addEventListener('click', function Button() {
     /*console.log(audio);*/
     let sound = new Audio(audio.src);
